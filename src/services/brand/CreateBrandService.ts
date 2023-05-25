@@ -11,7 +11,7 @@ class CreateBrandService {
     const brandExists = await brandRepository.findByName(name);
 
     if (brandExists) {
-      throw new DefaultError('Marks number already used.');
+      throw new DefaultError('Brand number already used.');
     }
 
     const brand = brandRepository.create({

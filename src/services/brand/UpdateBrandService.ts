@@ -12,13 +12,13 @@ class UpdateBrandService {
     const mark = await brandRepository.findOneBy({ id });
 
     if (!mark) {
-      throw new DefaultError('Mark not found.');
+      throw new DefaultError('Brand not found.');
     }
 
     const markExists = await brandRepository.findByName(name);
 
     if (markExists && name !== mark.name) {
-      throw new DefaultError('There is already one mark with this name');
+      throw new DefaultError('There is already one brand with this name');
     }
 
     mark.name = name;
