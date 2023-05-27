@@ -1,16 +1,8 @@
-import {
-  Column,
-  Entity,
-  CreateDateColumn,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { BaseModel } from '@shared/base/BaseModel';
+import { Column, Entity } from 'typeorm';
 
 @Entity('brands')
-export class Brand {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class Brand extends BaseModel {
   @Column()
   name: string;
 }

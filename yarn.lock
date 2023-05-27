@@ -2483,7 +2483,7 @@ internal-slot@^1.0.5:
     has "^1.0.3"
     side-channel "^1.0.4"
 
-inversify-express-utils@*:
+inversify-express-utils@*, inversify-express-utils@^6.4.3:
   version "6.4.3"
   resolved "https://registry.yarnpkg.com/inversify-express-utils/-/inversify-express-utils-6.4.3.tgz#3b46ec617e4608c5d8e0c7ef19c93b29f1b5e47b"
   integrity sha512-7YvEXeZ912N9hAQ9x0+q9zGV670I1imaIQJzzaBXdPQQiodPEGCO6sq53ODczgyP6M6x4kkQNsu9MlzQbVCtAQ==

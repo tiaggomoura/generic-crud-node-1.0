@@ -1,16 +1,8 @@
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { BaseModel } from '@shared/base/BaseModel';
+import { Column, Entity } from 'typeorm';
 
 @Entity('suppliers')
-export class Supplier {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class Supplier extends BaseModel {
   @Column()
   name: string;
 
@@ -31,10 +23,4 @@ export class Supplier {
 
   @Column()
   virtual: string;
-
-  @CreateDateColumn()
-  created_at: Date;
-
-  @UpdateDateColumn()
-  updated_at: Date;
 }

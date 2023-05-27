@@ -8,12 +8,10 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { Category } from './Category';
+import { BaseModel } from '@shared/base/BaseModel';
 
 @Entity('subcategories')
-export class Subcategory {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class Subcategory extends BaseModel {
   @Column()
   name: string;
 
@@ -25,10 +23,4 @@ export class Subcategory {
     name: 'category_id',
   })
   category: Category;
-
-  @CreateDateColumn()
-  created_at: Date;
-
-  @UpdateDateColumn()
-  updated_at: Date;
 }

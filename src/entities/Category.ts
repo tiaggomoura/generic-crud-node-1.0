@@ -1,29 +1,13 @@
-import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  JoinColumn,
-  OneToMany,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
-} from 'typeorm';
+import { BaseModel } from '@shared/base/BaseModel';
+import { Column, Entity, JoinColumn, OneToMany } from 'typeorm';
 import { Subcategory } from './Subcategory';
 
 @Entity('categories')
-export class Category {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class Category extends BaseModel {
   @Column()
   name: string;
 
   @OneToMany(() => Subcategory, subcategory => subcategory.category)
   @JoinColumn()
   subcategories: Subcategory[];
-
-  @CreateDateColumn()
-  created_at: Date;
-
-  @UpdateDateColumn()
-  updated_at: Date;
 }
